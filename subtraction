@@ -1,0 +1,17 @@
+#!/bin/bash
+
+subb ()    {
+
+	IFS='-' read -ra my_array <<< "$1"
+
+	local num1="${my_array[0]}"
+
+	local num2="${my_array[1]}"
+
+	local subtraction=$(echo "$num1 $num2 - p" | dc )
+
+	echo $subtraction
+
+	exit 0
+
+}

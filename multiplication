@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mult ()    {
+
+	IFS='*' read -ra my_array <<< "$1"
+
+	local num1="${my_array[0]}"
+
+	local num2="${my_array[1]}"
+
+	local multiplication=$(echo "20k $num1 $num2 * p" | dc )
+
+	echo $multiplication
+
+	exit 0
+
+}
